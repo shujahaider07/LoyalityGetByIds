@@ -15,7 +15,16 @@ namespace Loyality.IService.Services
         
         Task<List<RiderData>> IRiderService.GetById(List<int>? ids)
         {
-            return _rider.GetById(ids);
+            try
+            {
+                return _rider.GetById(ids);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            
         }
     }
 }
